@@ -1,7 +1,6 @@
 #include "Ejercicio02.h"
-#include <vector>
 
-int Ejercicio02::countStudents(std::vector<char>*& students, std::vector<char>*& sandwiches)
+int Ejercicio02::countStudents(vector<char>* students, vector<char>* sandwiches)
 {
     int j = 0;
     while (i < students->size() && j < sandwiches->size()) {
