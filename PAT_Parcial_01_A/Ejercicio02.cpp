@@ -3,7 +3,6 @@
 
 int Ejercicio02::countStudents(std::vector<char>& students, std::vector<char>& sandwiches)
 {
-    int countStudents(vector<int>&students, vector<int>&sandwiches) {
         int n = students.size();
         int i = 0;  // Índice de estudiantes
         int j = 0;  // Índice de sándwiches
