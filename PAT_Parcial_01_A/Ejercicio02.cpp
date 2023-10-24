@@ -1,7 +1,7 @@
 #include "Ejercicio02.h"
 #include <vector>
 
-int Ejercicio02::countStudents(std::vector<char>& students, std::vector<char>& sandwiches)
+int Ejercicio02::countStudents(std::vector<char>*& students, std::vector<char>*& sandwiches)
 {
     int studentsWithoutPreferredSandwich = 0;
 
