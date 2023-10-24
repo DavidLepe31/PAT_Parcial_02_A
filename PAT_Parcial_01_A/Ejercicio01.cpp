@@ -5,7 +5,7 @@ Node<char>* Ejercicio01::remove(Node<char>* head, char value)
     Node<char>* headf = head;
     Node<char>* tmp = head;
     Node<char>* tmp2 = headf;
-    if (head == nullprtr) {
+    if (head == nullptr) {
         return nullptr;
     }
 
