@@ -24,4 +24,5 @@ int Ejercicio02::countStudents(std::vector<char>& students, std::vector<char>& s
     }
 
     return studentsWithoutPreferredSandwich;
-}; }
+}
+}; 
