@@ -1,7 +1,5 @@
 #include "Ejercicio03.h"
 
-#include "Ejercicio03.h"
-
 MinStack::MinStack() {
     // Constructor: No se necesita inicialización especial.
 }
