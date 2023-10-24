@@ -3,26 +3,29 @@
 
 int Ejercicio02::countStudents(std::vector<char>& students, std::vector<char>& sandwiches)
 {
-    int studentsWithoutPreferredSandwich = 0;
+    int countStudents(vector<int>&students, vector<int>&sandwiches) {
+        int n = students.size();
+        int i = 0;  // Índice de estudiantes
+        int j = 0;  // Índice de sándwiches
 
-    for (int i = 0; i < students.size(); ++i) {
-        char preferredSandwich = students[i];
-        bool foundPreferredSandwich = false;
+        while (i < n) {
+            if (students[i] == sandwiches[j]) {
+                // El estudiante toma el sándwich
+                i++;
+                j++;
+            }
+            else {
+                // El estudiante no prefiere el sándwich actual, lo dejamos en la pila
+                j++;
+            }
 
-        for (int j = 0; j < sandwiches.size(); ++j) {
-            if (sandwiches[j] == preferredSandwich) {
-                sandwiches.erase(sandwiches.begin() + j);
-                foundPreferredSandwich = true;
-                break;
+            if (j == n) {
+                // Reiniciamos la pila de sándwiches si llegamos al final
+                j = 0;
             }
         }
 
-        if (!foundPreferredSandwich) {
-            studentsWithoutPreferredSandwich = students.size() - i;
-            break;
-        }
+        return n - i;  // Estudiantes restantes que no pueden comer
     }
 
-    return studentsWithoutPreferredSandwich;
-}
 }; 
