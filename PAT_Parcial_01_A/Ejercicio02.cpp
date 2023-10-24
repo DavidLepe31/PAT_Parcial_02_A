@@ -3,27 +3,19 @@
 
 int Ejercicio02::countStudents(std::vector<char>*& students, std::vector<char>*& sandwiches)
 {
-    int studentsWithoutPreferredSandwich = 0;
-
-    for (int i = 0; i < students.size(); ++i) {
-        char preferredSandwich = students[i];
-        bool foundPreferredSandwich = false;
-
-        for (int j = 0; j < sandwiches.size(); ++j) {
-            if (sandwiches[j] == preferredSandwich) {
-                sandwiches.erase(sandwiches.begin() + j);
-                foundPreferredSandwich = true;
-                break;
-            }
+    int j = 0;
+    while (i < students->size() && j < sandwiches->size()) {
+        if (students->at(i) == sandwiches->at(j)) {
+            students->erase(students->begin() + i);
+            sandwiches->erase(sandwiches->begin() + j);
+            i = 0;
+            j = 0;
         }
-
-        if (!foundPreferredSandwich) {
-            studentsWithoutPreferredSandwich = students.size() - i;
-            break;
+        else {
+            i++;
         }
     }
-
-    return studentsWithoutPreferredSandwich;
+    return students->size();
 }
 
 
