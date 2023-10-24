@@ -27,4 +27,4 @@ int Ejercicio02::countStudents(std::vector<char>& students, std::vector<char>& s
         return n - i;  // Estudiantes restantes que no pueden comer
     }
 
-}; 
+
