@@ -5,12 +5,7 @@ MinStack::MinStack() {
 
 
 }
-Node<int>* headmin = nullptr;
-Node<int>* minstack = headmin;
-Node<int>* headstack = nullptr;
-Node<int>* datastack = headstack;
-Node<int>* datastackpre = nullptr;
-Node<int>* minstackprev = nullptr;
+
 
 int MinStack::getMin() {
     int s = 0;
