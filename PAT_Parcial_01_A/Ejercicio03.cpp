@@ -1,56 +1,60 @@
 #include "Ejercicio03.h"
 #include "Node.h"
+#include<climits>
 
+MinStack::MinStack() {
 
-
-
-int MinStack::getMin() {
-    return minstack->value;
 }
-int MinStack::top() {
-    
-    if (datastack != nullptr) {
-        return  datastack->value;
-    }
-    else {
-        return 0;
-    }
-}
-
 
 void MinStack::push(int value) {
-    Node<int>* tmp = nullptr;
-    tmp->value = value;
+    Node<int>* tmp = new Node<int>(value, headatos);
     // Agregar el valor a la pila de datos.
     if (headstack == nullptr) {
-        headstack->value = value;
-        headmin->value = value;
+        headatos=tmp;
+        headmin = tmp;
     }
-    datastackpre = datastack;
-    datastack->next = tmp;
+    headatos = tmp;
     datastack = datastack->next;
-    if (tmp->value <= minstack->value || minstack==nullptr) {
-        minstackprev = minstack;
-        minstack->next = tmp;
-        minstack = minstack->next;
+    if (value <= headmin->value || headmin == nullptr) {
+        Node<int>* tmp2 = new Node<int>(value, headmin);
+        headmin = tmp2;
     }
 
 }
-
 void MinStack::pop() {
-    // Asegurarse de que las pilas no estén vacías.
-    if (datastack!=nullptr) {
+    if (headatos = nullptr) {
+        return INT_MIN;
+    }
+    
         // Si el valor que se va a eliminar es el valor mínimo, eliminarlo de la pila de seguimiento de mínimos.
         if (top() == getMin()) {
-            minstack = minstackprev;
-            minstack->next = nullptr;
+            Node<int>* node = headmin;
+            headmin = headmin->next;
+            delete node;
         }
 
-        // Eliminar el valor de la pila de datos.
-        datastack = datastackpre;
-        datastack->next = nullptr;
-    }
+        Node<int>* tmpp = headatos;
+        headatos = headatos->next;
+        delete tmpp;
+       
+    
 }
+
+
+
+int MinStack::top() {
+
+    return headatos->value;
+}
+
+int MinStack::getMin() {
+    return headmin->value;
+}
+
+
+
+
+
 
 
 
