@@ -5,16 +5,12 @@
 
 
 int MinStack::getMin() {
-    int s = 0;
-    s = minstack->value;
-    return s;
+    return minstack->value;
 }
 int MinStack::top() {
     
     if (datastack != nullptr) {
-        int r=0;
-        r = datastack->value;
-        return r;
+        return  datastack->value;
     }
     else {
         return 0;
