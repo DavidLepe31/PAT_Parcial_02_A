@@ -25,7 +25,7 @@ int MinStack::top() {
         return r;
     }
     else {
-        return std::INT_MIN;
+        return 0;
     }
 }
 
