@@ -12,9 +12,5 @@ public:
     int top();
     int getMin();
 
-private:
-    std::stack<int> dataStack;    // Pila para los elementos
-    std::stack<int> minStack;     // Pila para el seguimiento de los valores mínimos
-
 };
 
