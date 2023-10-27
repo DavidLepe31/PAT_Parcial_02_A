@@ -1,10 +1,7 @@
 #include "Ejercicio03.h"
 #include "Node.h"
 
-MinStack::MinStack() {
 
-
-}
 
 
 int MinStack::getMin() {
